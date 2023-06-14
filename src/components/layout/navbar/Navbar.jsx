@@ -1,7 +1,6 @@
-import { ShoppingCart } from "@mui/icons-material";
 import styles from "./Navbar.module.css";
-import { Badge } from "@mui/material";
 import { NavLink, Link } from "react-router-dom";
+import CartWidget from "./CartWidget";
 
 const Navbar = () => {
   return (
@@ -9,21 +8,24 @@ const Navbar = () => {
       <Link to="/" className={styles.nombre}>
         2CHAINS
       </Link>
+      <Link className={styles.secciones} to="/category/cadenas">
+        Cadenas
+      </Link>
+      <Link className={styles.secciones} to="/category/aretes">
+        Aretes
+      </Link>
       <ul>
         <li>
-          <NavLink to="/tienda">tienda</NavLink>
+          <NavLink className={styles.secciones} to="/ubicacion">
+            Ubicación
+          </NavLink>
         </li>
         <li>
-          <NavLink to="/ubicacion">ubicación</NavLink>
+          <NavLink className={styles.secciones} to="/contacto">
+            Contacto
+          </NavLink>
         </li>
-        <li>
-          <NavLink to="/contacto">contacto</NavLink>
-        </li>
-        <li>
-          <Badge badgeContent={4} color="primary">
-            <ShoppingCart fontSize="large" />
-          </Badge>
-        </li>
+        <CartWidget />
       </ul>
     </div>
   );

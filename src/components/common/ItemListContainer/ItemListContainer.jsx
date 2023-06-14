@@ -10,12 +10,10 @@ const ItemListContainer = ({ greeting }) => {
   const [itemsByCategory, setItemsByCategory] = useState([]);
 
   useEffect(() => {
-    console.log("category:", categoryId);
     const filteredItems = categoryId
       ? data.filter((item) => item.categoria === categoryId)
       : data;
     setItemsByCategory(filteredItems);
-    console.log(filteredItems);
   }, [categoryId]);
 
   return (
