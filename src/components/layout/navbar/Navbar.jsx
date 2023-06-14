@@ -1,20 +1,23 @@
 import { ShoppingCart } from "@mui/icons-material";
 import styles from "./Navbar.module.css";
 import { Badge } from "@mui/material";
+import { NavLink, Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
     <div className={styles.navbar}>
-      <h1 className={styles.nombre}>2CHAINS</h1>
+      <Link to="/" className={styles.nombre}>
+        2CHAINS
+      </Link>
       <ul>
         <li>
-          <button>tienda</button>
+          <NavLink to="/tienda">tienda</NavLink>
         </li>
         <li>
-          <button>ubicación</button>
+          <NavLink to="/ubicacion">ubicación</NavLink>
         </li>
         <li>
-          <button>contacto</button>
+          <NavLink to="/contacto">contacto</NavLink>
         </li>
         <li>
           <Badge badgeContent={4} color="primary">

@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "titulo": "Cadena Cholo",
+    "categoria": "cadenas",
+    "imagen": "*",
+    "precio": 200000
+  },
+  {
+    "id": 2,
+    "titulo": "Cadena 2CHAINZ",
+    "categoria": "cadenas",
+    "imagen": "*",
+    "precio": 200000
+  },
+  {
+    "id": 3,
+    "titulo": "Aretes 2PAC",
+    "categoria": "aretes",
+    "imagen": "*",
+    "precio": 200000
+  },
+  {
+    "id": 4,
+    "titulo": "Cadena Eazy E",
+    "categoria": "cadenas",
+    "imagen": "*",
+    "precio": 200000
+  },
+  {
+    "id": 5,
+    "titulo": "Cadena Biggie",
+    "categoria": "cadenas",
+    "imagen": "*",
+    "precio": 200000
+  },
+  {
+    "id": 6,
+    "titulo": "Aretes Snoop Doggy Dawg",
+    "categoria": "aretes",
+    "imagen": "*",
+    "precio": 200000
+  }
+]
