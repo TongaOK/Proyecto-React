@@ -11,19 +11,18 @@ const App = () => {
       <h3 style={{ textAlign: "center" }}>
         Somo una web dedicada a la venta de joyeria para OGs
       </h3>
-
-      <Routes>
-        <Route
-          exact
-          path="/"
-          element={<ItemListContainer greeting={"Bienvenido a 2CHAINS"} />}
-        />
-        <Route
-          path="/category/:categoryId"
-          element={<ItemListContainer greeting={"Bienvenido a 2CHAINS"} />}
-        />
-        <Route path="/item/:itemId" element={<ItemDetailsContainer />} />
-      </Routes>
+        <Routes>
+          <Route
+            exact
+            path="/"
+            element={<ItemListContainer greeting={"Bienvenido a 2CHAINS"} />}
+          />
+          <Route
+            path="/category/:categoryId"
+            element={<ItemListContainer greeting={"Bienvenido a 2CHAINS"} />}
+          />
+          <Route path="/item/:itemId" element={<ItemDetailsContainer />} />
+        </Routes>
     </BrowserRouter>
   );
 };
