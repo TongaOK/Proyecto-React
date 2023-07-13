@@ -4,6 +4,7 @@ import ItemDetails from "./components/common/ItemDetails/ItemDetails";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Cart from "./components/common/Cart/Cart";
 import { CartProvider } from "./context/CartContext";
+import Checkout from "./components/common/Checkout/Checkout";
 
 const App = () => {
   return (
@@ -26,6 +27,7 @@ const App = () => {
           />
           <Route path="/item/:itemId" element={<ItemDetails />} />
           <Route path="/cart" element={<Cart />} />
+          <Route patch="/checkout" element={<Checkout />} />
         </Routes>
       </CartProvider>
     </BrowserRouter>
