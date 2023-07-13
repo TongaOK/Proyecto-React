@@ -1,36 +1,40 @@
 import styles from "./ItemListContainer.module.css";
 import { Item } from "../ItemCards/Item";
 import { useParams } from "react-router-dom";
-import { getProducts } from "../../../data/asyncMock.js";
 import { useEffect, useState } from "react";
+import { collection, getDocs, query, where } from "firebase/firestore";
+import { db } from "../../../firebase/config";
+import Spinner from "../spinner/spinner";
 
 const ItemListContainer = ({ greeting }) => {
   const { categoryId } = useParams();
 
   const [itemsByCategory, setItemsByCategory] = useState([]);
 
-  const [data, setData] = useState([]);
-
   useEffect(() => {
-    getProducts()
-      .then((response) => {
-        setData(response);
-      })
-      .catch((error) => {
-        console.error(error);
-      });
-    const filteredItems = categoryId
-      ? data.filter((item) => item.categoria === categoryId)
-      : data;
-    setItemsByCategory(filteredItems);
-  }, [categoryId, data]);
+    const productosRef = collection(db, "productos");
+    const q = categoryId
+      ? query(productosRef, where("categoria", "==", categoryId))
+      : productosRef;
+
+    getDocs(q).then((resp) => {
+      setItemsByCategory(
+        resp.docs.map((doc) => {
+          return { ...doc.data(), id: doc.id };
+        })
+      );
+    });
+  }, [categoryId]);
 
   return (
     <div>
       <h1 className={styles.greeting}>{greeting}</h1>
       <div className={styles.itemGrid}>
-        {itemsByCategory.length &&
-          itemsByCategory.map((item) => <Item item={item} key={item.id} />)}
+        {itemsByCategory.length ? (
+          itemsByCategory.map((item) => <Item item={item} key={item.id} />)
+        ) : (
+          <Spinner />
+        )}
       </div>
     </div>
   );

@@ -1,28 +1,43 @@
 import { useState } from "react";
-import styles from "./ItemCount.module.css"
+import styles from "./ItemCount.module.css";
 
-const ItemCount = ({stock, initial}) => {
-  console.log("stock:", stock)  
-  const [quantity, setQuantity] = useState(initial)
+const ItemCount = ({ stock, initial, onAdd }) => {
+  const [quantity, setQuantity] = useState(initial);
 
-    const increment = () => {
-      if (quantity + 1 > stock) return
-      const newQuantity = quantity + 1
-      setQuantity((newQuantity))}
+  const increment = () => {
+    if (quantity < stock) setQuantity(quantity + 1);
+  };
 
-    const decrement = () => {
-      if (quantity - 1 < 0) return
-      const newQuantity = quantity - 1
-      setQuantity((newQuantity))}
-    
-   /*  const [quantityAdded, setQuantityAdded] = useState(0)
+  const decrement = () => {
+    if (quantity > 1);
+    {
+      setQuantity(quantity - 1);
+    }
+  };
 
-    const handledOnAdd = (quantity) => {setQuantityAdded(quantity)} */
-  return <div>
-    <button className={styles.buttonCount} onClick={decrement}>-</button>
-    <span className={styles.countNumber}>{quantity}</span>
-    <button className={styles.buttonCount} onClick={increment}>+</button>
-  </div>;
+  return (
+    <div className={styles.Counter}>
+      <div className={styles.Controls}>
+        <button className={styles.buttonCount} onClick={decrement}>
+          -
+        </button>
+        <h4 className={styles.Number}>{quantity}</h4>
+
+        <button className={styles.buttonCount} onClick={increment}>
+          +
+        </button>
+      </div>
+      <div>
+        <button
+          className={styles.botonComprar}
+          onClick={() => onAdd(quantity)}
+          disabled={!stock}
+        >
+          CASH IN
+        </button>
+      </div>
+    </div>
+  );
 };
 
 export default ItemCount;
