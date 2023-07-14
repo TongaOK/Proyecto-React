@@ -8,13 +8,17 @@ const Navbar = () => {
       <Link to="/" className={styles.nombre}>
         2CHAINS
       </Link>
-      <Link className={styles.secciones} to="/category/cadenas">
-        Cadenas
-      </Link>
-      <Link className={styles.secciones} to="/category/aretes">
-        Aretes
-      </Link>
       <ul>
+        <li>
+          <NavLink className={styles.secciones} to="/category/cadenas">
+            Cadenas
+          </NavLink>
+        </li>
+        <li>
+          <NavLink className={styles.secciones} to="/category/aretes">
+            Aretes
+          </NavLink>
+        </li>
         <li>
           <NavLink className={styles.secciones} to="/ubicacion">
             Ubicación

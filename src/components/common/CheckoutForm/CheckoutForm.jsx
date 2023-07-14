@@ -16,35 +16,39 @@ const CheckoutForm = ({ onConfirm }) => {
     };
 
     onConfirm(userData);
+    console.log(userData);
   };
   return (
     <div className={styles.Container}>
       <form onSubmit={handleConfirm} className={styles.Form}>
-        <label className={styles.Label}>
-          Nombre
+        <label htmlFor="nombre" className={styles.Label}>
+          Nombre:
           <input
             className={styles.Input}
             type="text"
             value={name}
             onChange={({ target }) => setName(target.value)}
+            required
           />
         </label>
-        <label className={styles.Label}>
-          Telefono
+        <label htmlFor="nombre" className={styles.Label}>
+          Telefono:
           <input
             className={styles.Input}
-            type="text"
+            type="tel"
             value={phone}
             onChange={({ target }) => setPhone(target.value)}
+            required
           />
         </label>
-        <label className={styles.Label}>
-          Email
+        <label htmlFor="nombre" className={styles.Label}>
+          Email:
           <input
             className={styles.Input}
             type="email"
             value={email}
             onChange={({ target }) => setEmail(target.value)}
+            required
           />
         </label>
         <div className={styles.Label}>

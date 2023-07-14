@@ -9,8 +9,8 @@
 .loadingSpinner {
   width: 50px;
   height: 50px;
-  border: 10px solid #b6aa0a;
-  border-top: 10px solid #318b0d;
+  border: 10px solid #4e4feb;
+  border-top: 10px solid #9c27b0;
   border-radius: 50%;
   animation: spinner 1.5s linear infinite;
 }

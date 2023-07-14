@@ -46,7 +46,9 @@ const ItemDetails = () => {
           {addedQuantity === 0 ? (
             <ItemCount initial={1} stock={itemById.stock} onAdd={handleAdd} />
           ) : (
-            <Link to="/cart">Carrito</Link>
+            <Link className={styles.goToCart} to="/cart">
+              Carrito
+            </Link>
           )}
         </>
       )}

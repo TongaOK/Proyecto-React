@@ -1,0 +1,28 @@
+@import url("https://fonts.googleapis.com/css2?family=Kanit:wght@200;400;600&display=swap");
+
+.cartItem {
+  display: flex;
+  flex-direction: row;
+  gap: 1.5rem;
+  justify-content: space-around;
+  padding: 1rem;
+  background-color: #4e4eebb6;
+  border-radius: 0.75rem;
+  width: 70%;
+  align-items: center;
+  margin: auto;
+  margin-top: 1rem;
+}
+
+.text {
+  font-family: "Kanit", sans-serif;
+}
+
+.remove {
+  font-family: "Kanit", sans-serif;
+  background-color: white;
+}
+
+.remove:hover {
+  background-color: rgb(255, 29, 29);
+}

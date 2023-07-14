@@ -8,9 +8,11 @@
 }
 
 .buttonCount {
-  background-color: silver;
-  border-radius: 0.5rem;
+  border-radius: 0.25rem;
   padding: 0.5rem;
+  text-decoration: none;
+  color: white;
+  background-color: rgb(57, 126, 57);
 }
 
 .botonComprar {
@@ -20,4 +22,11 @@
   text-decoration: none;
   color: white;
   background-color: rgb(57, 126, 57);
+  margin-left: 0.25rem;
+  text-transform: uppercase;
+  font-weight: bolder;
+}
+
+.Counter {
+  padding-top: 0.5rem;
 }

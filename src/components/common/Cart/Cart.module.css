@@ -1,0 +1,37 @@
+@import url("https://fonts.googleapis.com/css2?family=Kanit:wght@200;400;600&display=swap");
+
+.total {
+  padding: 1rem;
+  background-color: rgb(57, 126, 57);
+  border-radius: 1rem;
+  width: 70%;
+  margin: auto;
+  margin-top: 1rem;
+  text-align: center;
+  font-family: "Kanit", sans-serif;
+}
+
+.botonesCompra {
+  display: flex;
+  justify-content: space-around;
+  padding: 1rem;
+  font-family: "Kanit", sans-serif;
+}
+
+.vaciar {
+  background-color: gray;
+}
+
+.vaciar:hover {
+  background-color: rgb(255, 29, 29);
+}
+
+.compra {
+  background-color: rgb(57, 126, 57);
+}
+
+a {
+  text-decoration: none;
+  color: black;
+  font-family: "Kanit", sans-serif;
+}

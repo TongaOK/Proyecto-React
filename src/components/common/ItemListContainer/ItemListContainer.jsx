@@ -29,6 +29,10 @@ const ItemListContainer = ({ greeting }) => {
   return (
     <div>
       <h1 className={styles.greeting}>{greeting}</h1>
+      <h3 className={styles.mainTitle}>
+        Somos una web dedicada a la venta de joyeria para OGs
+      </h3>
+
       <div className={styles.itemGrid}>
         {itemsByCategory.length ? (
           itemsByCategory.map((item) => <Item item={item} key={item.id} />)

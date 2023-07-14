@@ -11,10 +11,6 @@ const App = () => {
     <BrowserRouter>
       <CartProvider>
         <Navbar />
-
-        <h3 style={{ textAlign: "center" }}>
-          Somo una web dedicada a la venta de joyeria para OGs
-        </h3>
         <Routes>
           <Route
             exact
@@ -27,7 +23,7 @@ const App = () => {
           />
           <Route path="/item/:itemId" element={<ItemDetails />} />
           <Route path="/cart" element={<Cart />} />
-          <Route patch="/checkout" element={<Checkout />} />
+          <Route path="/checkout" element={<Checkout />} />
         </Routes>
       </CartProvider>
     </BrowserRouter>

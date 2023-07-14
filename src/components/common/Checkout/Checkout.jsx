@@ -11,16 +11,16 @@ import { useContext, useState } from "react";
 import { CartContext } from "../../../context/CartContext";
 import CheckoutForm from "../CheckoutForm/CheckoutForm";
 import { db } from "../../../firebase/config";
+import styles from "./Checkout.module.css";
 
 const Checkout = () => {
   const [loading, setLoading] = useState(false);
   const [orderId, setOrderId] = useState("");
 
-  const { cart, total, clearCart } = useContext(CartContext);
+  const { cart, getTotal, clearCart } = useContext(CartContext);
 
   const createOrder = async ({ name, phone, email }) => {
     setLoading(true);
-
     try {
       const objOrder = {
         buyer: {
@@ -29,9 +29,10 @@ const Checkout = () => {
           email,
         },
         items: cart,
-        total: total,
+        total: getTotal(),
         date: Timestamp.fromDate(new Date()),
       };
+      console.log(objOrder);
 
       const batch = writeBatch(db);
 
@@ -81,15 +82,14 @@ const Checkout = () => {
   };
 
   if (loading) {
-    return <h1>Se está generando su orden...</h1>;
+    return <h1 className={styles.orden}>Se está generando su orden...</h1>;
   }
 
   if (orderId) {
-    return <h1>El ID de su orden es: {orderId}</h1>;
+    return <h1 className={styles.orden}>El ID de su orden es: {orderId}</h1>;
   }
   return (
     <div>
-      <h1>Checkout</h1>
       <CheckoutForm onConfirm={createOrder} />
     </div>
   );

@@ -1,14 +1,16 @@
 import { useContext } from "react";
 import { CartContext } from "../../../context/CartContext";
 import CartItem from "../CartItem/CartItem";
+import { Link } from "react-router-dom";
+import styles from "./Cart.module.css";
 
 const Cart = () => {
-  const { cart, clearCart, removeItem } = useContext(CartContext);
+  const { cart, clearCart, removeItem, getTotal } = useContext(CartContext);
 
-  const purchaseConfirmation = () => {
+  /* const purchaseConfirmation = () => {
     clearCart();
     alert("Tu compra ha sido confirmada");
-  };
+  }; */
   return (
     <div>
       <div>
@@ -21,8 +23,15 @@ const Cart = () => {
         ))}
       </div>
       <div>
-        <button onClick={clearCart}>Vaciar Carrito</button>
-        <button onClick={purchaseConfirmation}>Terminar Compra</button>
+        <h3 className={styles.total}>TOTAL: {getTotal()}</h3>
+        <div className={styles.botonesCompra}>
+          <button className={styles.vaciar} onClick={clearCart}>
+            Vaciar Carrito
+          </button>
+          <button className={styles.compra}>
+            <Link to="/checkout">Terminar Compra</Link>
+          </button>
+        </div>
       </div>
     </div>
   );

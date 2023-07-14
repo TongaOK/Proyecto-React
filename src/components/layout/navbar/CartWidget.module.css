@@ -12,8 +12,15 @@ ul {
   text-decoration: none;
 }
 li {
-  color: #0077c0;
   padding-left: 1rem;
   padding-right: 1rem;
   padding-top: 1rem;
+}
+
+.cart {
+  padding-top: 0.5rem;
+}
+
+.cartIcon {
+  color: #4e4feb;
 }
